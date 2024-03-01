@@ -1,7 +1,8 @@
-import React from 'react';
-import './styles.scss';
+import { useRoutes } from 'react-router-dom';
+import { ROUTES } from '../../router';
+
 const App = () => {
-  return <div className="container">12345</div>;
+  return useRoutes(ROUTES);
 };
 
 export default App;
