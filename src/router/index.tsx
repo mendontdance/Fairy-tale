@@ -5,11 +5,11 @@ import FairyTale from '../pages/FairyTale';
 
 export const ROUTES: RouteObject[] = [
   {
-    path: '/fairy-tale',
+    path: '/',
     element: <MainPage />,
   },
   {
-    path: '/fairy-tale/story',
+    path: '/story',
     element: <FairyTale />,
   },
 ];

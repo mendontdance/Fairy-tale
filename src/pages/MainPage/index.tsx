@@ -28,7 +28,7 @@ const MainPage = () => {
               type="button"
               key={fairyTale.id}
               onClick={() => {
-                navigate('/fairy-tale/story');
+                navigate('/story');
                 runtime.setFairyTale(fairyTale);
               }}
             >

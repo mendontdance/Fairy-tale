@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { RootStore } from './store/store';
 import { RootStoreContext } from './store/RootStoreContext';
 
@@ -10,9 +10,9 @@ const store = new RootStore();
 root.render(
   <React.StrictMode>
     <RootStoreContext.Provider value={store}>
-      <Router>
+      <HashRouter>
         <App />
-      </Router>
+      </HashRouter>
     </RootStoreContext.Provider>
   </React.StrictMode>
 );

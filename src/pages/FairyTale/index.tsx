@@ -29,7 +29,7 @@ const FairyTale = () => {
       <div className={classBem('text')}>{data?.text}</div>
       <img src={data?.image} alt={data?.text} className={classBem('img')} />
       <div className={classBem('buttons')}>
-        <button className={classBem('button')} onClick={() => navigate('/fairy-tale')}>
+        <button className={classBem('button')} onClick={() => navigate('/')}>
           Назад в меню
         </button>
         <button
