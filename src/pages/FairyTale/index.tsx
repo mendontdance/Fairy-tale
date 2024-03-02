@@ -14,7 +14,7 @@ const FairyTale = () => {
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
 
   if (!runtime.fairyTale) {
-    navigate('/');
+    navigate('/fairy-tale');
   }
   console.log(page);
 
@@ -29,7 +29,7 @@ const FairyTale = () => {
       <div className={classBem('text')}>{data?.text}</div>
       <img src={data?.image} alt={data?.text} className={classBem('img')} />
       <div className={classBem('buttons')}>
-        <button className={classBem('button')} onClick={() => navigate('/')}>
+        <button className={classBem('button')} onClick={() => navigate('/fairy-tale')}>
           Назад в меню
         </button>
         <button
