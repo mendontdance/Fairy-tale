@@ -26,6 +26,7 @@ const FairyTale = () => {
 
   return (
     <div className={classBem()}>
+      {data?.title && <div className={classBem('title')}>{data?.title}</div>}
       <div className={classBem('text')}>{data?.text}</div>
       <img src={data?.image} alt={data?.text} className={classBem('img')} />
       <div className={classBem('buttons')}>

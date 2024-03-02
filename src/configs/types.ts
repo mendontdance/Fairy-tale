@@ -6,5 +6,6 @@ export interface IFairyTale {
 
 export interface IFairyTaleData {
   text: string;
+  title?: string;
   image: any;
 }

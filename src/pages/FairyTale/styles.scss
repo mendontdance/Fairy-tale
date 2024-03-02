@@ -8,6 +8,17 @@
   max-width: 500px;
   padding: 0 20px;
 
+  &__title {
+    margin: 15px;
+    padding-bottom: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 36px;
+    text-align: center;
+    color: #06175d;
+  }
+
   &__text {
     margin: 0 0 20px;
     font-family: "Roboto", sans-serif;
@@ -35,7 +46,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: #06175d;
-    height: 70px;
+    height: 75px;
   }
 
   &__button {
@@ -53,7 +64,7 @@
     cursor: pointer;
 
     &_arrow {
-      padding: 0 7px;
+      padding: 0 13px;
       font-size: 40px;
     }
 
