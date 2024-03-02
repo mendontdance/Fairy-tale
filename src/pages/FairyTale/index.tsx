@@ -14,7 +14,7 @@ const FairyTale = () => {
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
 
   if (!runtime.fairyTale) {
-    navigate('/fairy-tale');
+    navigate('/');
   }
   console.log(page);
 
