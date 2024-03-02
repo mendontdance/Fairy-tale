@@ -1,0 +1,67 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+
+  &__title {
+    margin: 40px 0 20px;
+    padding-bottom: 20px;
+    font-family: "Orelega One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    text-align: center;
+    color: #003366;
+    border-bottom: 1px dashed #003366;
+  }
+
+  &__subtitle {
+    margin: 0 0 20px;
+    font-family: "Orelega One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    text-align: center;
+    color: #003366;
+  }
+
+  &__text {
+    margin: 0 0 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    background-color: #003366;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    color: #ebf2fa;
+    border: 1px solid #003366;
+    transition: all .3s ease-in-out;
+    box-shadow: 0 4px 20px rgba(#000, .6);
+
+    &:hover {
+      background-color: #ebf2fa;
+      color: #003366;
+      border: 1px solid #003366;
+    }
+  }
+}

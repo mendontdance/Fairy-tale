@@ -1,12 +1,13 @@
 import { makeAutoObservable } from 'mobx';
+import { IFairyTale } from '../../configs/types';
 export class Runtime {
   constructor() {
     makeAutoObservable(this);
   }
 
-  fairyTale?: number = undefined;
+  fairyTale: IFairyTale | null = null;
 
-  setFairyTale(value: number) {
+  setFairyTale(value: IFairyTale) {
     this.fairyTale = value;
   }
 }

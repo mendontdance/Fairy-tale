@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteObject } from 'react-router-dom';
-import MainPage from '../components/MainPage';
-import { FairyTale } from '../components/FairyTale';
+import MainPage from '../pages/MainPage';
+import FairyTale from '../pages/FairyTale';
 
 export const ROUTES: RouteObject[] = [
   {
@@ -9,7 +9,7 @@ export const ROUTES: RouteObject[] = [
     element: <MainPage />,
   },
   {
-    path: '/first-fairy-tale',
+    path: '/fairy-tale',
     element: <FairyTale />,
   },
 ];

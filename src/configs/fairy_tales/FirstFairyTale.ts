@@ -1,4 +1,4 @@
-import template from '../data_images/template.png';
+import template from '../data_images/Rome.jpeg';
 
 export const FirstFairyTale = [
   {
