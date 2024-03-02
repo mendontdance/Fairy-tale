@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.241d2e2a.css",
-    "main.js": "./static/js/main.13bcca01.js",
-    "static/media/Rome.jpeg": "./static/media/Rome.129a3f19a400767ee9ae.jpeg",
-    "index.html": "./index.html",
-    "main.241d2e2a.css.map": "./static/css/main.241d2e2a.css.map",
-    "main.13bcca01.js.map": "./static/js/main.13bcca01.js.map"
+    "main.css": "./fairy-tale/static/css/main.241d2e2a.css",
+    "main.js": "./fairy-tale/static/js/main.c6d58257.js",
+    "static/media/Rome.jpeg": "./fairy-tale/static/media/Rome.129a3f19a400767ee9ae.jpeg",
+    "index.html": "./fairy-tale/index.html",
+    "main.241d2e2a.css.map": "./fairy-tale/static/css/main.241d2e2a.css.map",
+    "main.c6d58257.js.map": "./fairy-tale/static/js/main.c6d58257.js.map"
   },
   "entrypoints": [
     "static/css/main.241d2e2a.css",
-    "static/js/main.13bcca01.js"
+    "static/js/main.c6d58257.js"
   ]
 }
