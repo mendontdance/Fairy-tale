@@ -33,7 +33,8 @@ const FairyTale = () => {
           Назад в меню
         </button>
         <button
-          className={classBem('button', { arrow: true })}
+          disabled={page === 0}
+          className={classBem('button', { arrow: true, disabled: page === 0 })}
           onClick={() =>
             setPage((prevState) => {
               if (prevState - 1 < 0) return prevState;
@@ -47,11 +48,10 @@ const FairyTale = () => {
         {/*  res*/}
         {/*</button>*/}
         <button
-          className={classBem('button', { arrow: true })}
+          className={classBem('button', { arrow: true, disabled: page + 1 === runtime?.fairyTale?.data?.length })}
           onClick={() =>
             setPage((prevState) => {
-              if (runtime?.fairyTale?.data?.length && prevState === runtime?.fairyTale?.data?.length - 1)
-                return prevState;
+              if (prevState + 1 === runtime?.fairyTale?.data?.length) return prevState;
               return ++prevState;
             })
           }

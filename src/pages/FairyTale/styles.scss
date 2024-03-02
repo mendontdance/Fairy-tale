@@ -50,10 +50,16 @@
     height: 50px;
     transition: all .3s ease-in-out;
     box-shadow: 0 4px 20px rgba(#000, .6);
+    cursor: pointer;
 
     &_arrow {
       padding: 0 7px;
       font-size: 40px;
+    }
+
+    &_disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
     }
   }
 }
