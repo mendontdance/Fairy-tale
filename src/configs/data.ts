@@ -9,7 +9,7 @@ export const DATA = {
   },
   SECOND_FAIRY_TALE: {
     id: 1,
-    name: 'Сказка о МИЛАНЕ',
+    name: 'Сказка о латинской грамматике',
     data: SecondFairyTale,
   },
 };
