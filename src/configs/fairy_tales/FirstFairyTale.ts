@@ -19,6 +19,21 @@ export const FirstFairyTale = [
     audio: templateAudio,
   },
   {
+    text: 'Ответьте быстренько на тест',
+    test: {
+      text: 'Сколько будет 5 + 6',
+      variants: [
+        'Да',
+        'Нет',
+        '11',
+        'Sardinia insula Romana est. Creta, Rhodus, Naxus, Samos, Chios, Lesbos, Lemnos, Euboea sunt insulae Graecae. In Graecia multae insulae sunt. In Italia et in Graecia sunt multa oppida. In Gallia et in Germania multi sunt fluvii. Suntne multi fluvii et multa oppida in Arabia? In Arabia non multi, sed pauci fluvii sunt et pauca oppida',
+      ],
+    },
+    rightAnswer: '11',
+    success: 'МОЛОДЕЦ! Ты выучил',
+    error: 'Неправильно! Учи заново',
+  },
+  {
     text: 'Estne Gallia in Europa? Gallia in Europa est. Estne Roma in Gallia? Roma in Gallia non est. Ubi est Roma? Roma est in Italia. Ubi est Italia? Italia in Europa est. Ubi sunt Gallia et Hispania? Gallia et Hispania in Europa sunt.',
     image: template,
     audio: templateAudio2,
@@ -52,15 +67,5 @@ export const FirstFairyTale = [
     text: 'Num Creta oppidum est? Creta oppidum non est! Quid est Creta? Creta insula est. Num Sparta insula est? Sparta non est insula! Quid est Sparta? Sparta oppidum est. Rhenus quid est? Rhenus est magnus fluvius. Num oceanus Atlanticus parvus est? Non parvus, sed magnus est oceanus. Ubi est imperium Romanum? Imperium Romanum est in Europa, in Asia, in Africa. Hispania et Syria et Aegyptus provinciae Romanae sunt. Germania non est provincia Romana: Germania in imperio Romano non est. Sed Gallia et Britannia sunt provinciae Romanae. In imperio Romano multae sunt provinciae. Magnum est imperium Romanum!',
     image: template,
     audio: templateAudio2,
-  },
-  {
-    text: 'Ответьте быстренько на тест',
-    test: {
-      text: 'Сколько будет 5 + 6',
-      variants: ['Да', 'Нет', '11', 'Не знаю'],
-    },
-    rightAnswer: '11',
-    success: 'МОЛОДЕЦ!',
-    error: 'Неправильно! Учи заново',
   },
 ];
