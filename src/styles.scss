@@ -24,7 +24,14 @@ button {
   background-color: #ebf2fa;
   margin: 0 auto;
   position: relative;
-  border: 5px solid #003366;
+  border: 5px solid #7d838a;
   border-radius: 70px;
   overflow: hidden;
+}
+
+@media screen and (max-width: 700px) {
+  #root {
+    border: none;
+    border-radius: 0;
+  }
 }
