@@ -27,6 +27,7 @@ const FairyTale = () => {
     <div className={classBem()}>
       <div className={classBem('text-container')}>
         {data?.title && <div className={classBem('title')}>{data?.title}</div>}
+        {data?.audio && <audio src={data.audio} preload="auto" autoPlay />}
         <div className={classBem('text')}>{data?.text}</div>
       </div>
       <div className={classBem('panel')}>

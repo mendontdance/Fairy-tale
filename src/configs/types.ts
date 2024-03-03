@@ -8,4 +8,5 @@ export interface IFairyTaleData {
   text: string;
   title?: string;
   image: any;
+  audio?: any;
 }
