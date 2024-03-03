@@ -14,7 +14,7 @@ export const FirstFairyTale = [
     audio: templateAudio2,
   },
   {
-    text: 'Aegyptus in Europa non est, Aegyptus in Africa est. Gallia non in Africa est, Gallia est in Europa. Syria non est in Europa, sed in Asia. Arabia quoque in Asia est. Syria et Arabia in Asia sunt. Germania non in Asia, sed in Europa est. Britannia quoque in Europa est. Germania et Britannia sunt in Europa.',
+    text: 'Syria et Arabia in Asia sunt. Germania non in Asia, sed in Europa est. Britannia quoque in Europa est. Germania et Britannia sunt in Europa.',
     image: template,
     audio: templateAudio,
   },
