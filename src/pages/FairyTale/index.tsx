@@ -12,6 +12,7 @@ const FairyTale = () => {
   const [page, setPage] = useState(0);
   const navigate = useNavigate();
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
+  const [result, setResult] = useState<string | undefined>(undefined);
 
   if (runtime.fairyTale === null) {
     navigate('/');
@@ -26,39 +27,80 @@ const FairyTale = () => {
   return (
     <div className={classBem()}>
       <div className={classBem('text-container')}>
-        {data?.title && <div className={classBem('title')}>{data?.title}</div>}
-        {data?.audio && <audio src={data.audio} preload="auto" autoPlay />}
-        <div className={classBem('text')}>{data?.text}</div>
+        {data?.test ? (
+          <>
+            {result ? (
+              <div className={classBem('title')}>{result}</div>
+            ) : (
+              <>
+                <div className={classBem('title')}>{data.test.text}</div>
+                <fieldset className={classBem('text')}>
+                  {data.test.variants.map((elem) => {
+                    return (
+                      <div className={classBem('text')} key={elem}>
+                        <input
+                          type="radio"
+                          id={elem}
+                          key={elem}
+                          value={elem}
+                          onClick={() => {
+                            if (elem === data?.rightAnswer) {
+                              setResult(data?.success);
+                            } else {
+                              setResult(data?.error);
+                            }
+                          }}
+                        />
+                        <label htmlFor={elem}>{elem}</label>
+                      </div>
+                    );
+                  })}
+                </fieldset>
+              </>
+            )}
+          </>
+        ) : (
+          <>
+            {data?.title && <div className={classBem('title')}>{data?.title}</div>}
+            {data?.audio && <audio src={data.audio} preload="auto" autoPlay />}
+            <div className={classBem('text')}>{data?.text}</div>
+          </>
+        )}
       </div>
       <div className={classBem('panel')}>
-        <img src={data?.image} alt={data?.text} className={classBem('img')} />
+        {data?.image && <img src={data?.image} alt={data?.text} className={classBem('img')} />}
         <div className={classBem('buttons')}>
-          <button className={classBem('button')} onClick={() => navigate('/')}>
+          <button
+            className={classBem('button')}
+            onClick={() => {
+              navigate('/');
+              setResult(undefined);
+            }}
+          >
             &#9776;
           </button>
           <button
             disabled={page === 0}
             className={classBem('button', { arrow: true, disabled: page === 0 })}
-            onClick={() =>
+            onClick={() => {
               setPage((prevState) => {
+                setResult(undefined);
                 if (prevState - 1 < 0) return prevState;
                 return --prevState;
-              })
-            }
+              });
+            }}
           >
             &#8666;
           </button>
-          {/*<button className={classBem('button')} onClick={() => setPage((prevState) => prevState++)}>*/}
-          {/*  res*/}
-          {/*</button>*/}
           <button
             className={classBem('button', { arrow: true, disabled: page + 1 === runtime?.fairyTale?.data?.length })}
-            onClick={() =>
+            onClick={() => {
+              setResult(undefined);
               setPage((prevState) => {
                 if (prevState + 1 === runtime?.fairyTale?.data?.length) return prevState;
                 return ++prevState;
-              })
-            }
+              });
+            }}
           >
             &#8667;
           </button>

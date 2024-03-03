@@ -53,4 +53,14 @@ export const FirstFairyTale = [
     image: template,
     audio: templateAudio2,
   },
+  {
+    text: 'Ответьте быстренько на тест',
+    test: {
+      text: 'Сколько будет 5 + 6',
+      variants: ['Да', 'Нет', '11', 'Не знаю'],
+    },
+    rightAnswer: '11',
+    success: 'МОЛОДЕЦ!',
+    error: 'Неправильно! Учи заново',
+  },
 ];
