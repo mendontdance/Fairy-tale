@@ -29,35 +29,29 @@ const FairyTale = () => {
       <div className={classBem('text-container')}>
         {data?.test ? (
           <>
-            {result ? (
-              <div className={classBem('title')}>{result}</div>
-            ) : (
-              <>
-                <div className={classBem('title')}>{data.test.text}</div>
-                <fieldset className={classBem('text')}>
-                  {data.test.variants.map((elem) => {
-                    return (
-                      <div className={classBem('text')} key={elem}>
-                        <input
-                          type="radio"
-                          id={elem}
-                          key={elem}
-                          value={elem}
-                          onClick={() => {
-                            if (elem === data?.rightAnswer) {
-                              setResult(data?.success);
-                            } else {
-                              setResult(data?.error);
-                            }
-                          }}
-                        />
-                        <label htmlFor={elem}>{elem}</label>
-                      </div>
-                    );
-                  })}
-                </fieldset>
-              </>
-            )}
+            <div className={classBem('title')}>{result ? result : data.test.text}</div>
+            <fieldset className={classBem('text')}>
+              {data.test.variants.map((elem) => {
+                return (
+                  <div className={classBem('text')} key={elem}>
+                    <input
+                      type="radio"
+                      id={elem}
+                      key={elem}
+                      value={elem}
+                      onClick={() => {
+                        if (elem === data?.rightAnswer) {
+                          setResult(data?.success);
+                        } else {
+                          setResult(data?.error);
+                        }
+                      }}
+                    />
+                    <label htmlFor={elem}>{elem}</label>
+                  </div>
+                );
+              })}
+            </fieldset>
           </>
         ) : (
           <>
