@@ -4,12 +4,12 @@
 
 html,
 body {
-  margin: 0 auto;
+  margin: 3vh auto 0;
   padding: 0;
   position: relative;
   max-width: 400px;
   background-color: #020310;
-  height: calc(100vh - 120px);
+  height: 90vh;
 }
 
 button {
@@ -25,11 +25,16 @@ button {
   margin: 0 auto;
   position: relative;
   border: 5px solid #7d838a;
-  border-radius: 70px;
+  border-radius: 32px;
   overflow: hidden;
 }
 
 @media screen and (max-width: 700px) {
+  html,
+  body {
+    margin: 0 auto;
+  }
+
   #root {
     border: none;
     border-radius: 0;
