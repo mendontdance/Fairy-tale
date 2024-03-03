@@ -9,7 +9,7 @@ body {
   position: relative;
   max-width: 400px;
   background-color: #020310;
-  height: 100vh;
+  height: calc(100vh - 100px);
 }
 
 button {
