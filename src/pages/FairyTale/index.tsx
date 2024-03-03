@@ -13,10 +13,9 @@ const FairyTale = () => {
   const navigate = useNavigate();
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
 
-  if (!runtime.fairyTale) {
+  if (runtime.fairyTale === null) {
     navigate('/');
   }
-  console.log(page);
 
   useEffect(() => {
     if (runtime?.fairyTale?.data[page]) {
