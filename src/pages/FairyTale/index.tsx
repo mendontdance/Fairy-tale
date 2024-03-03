@@ -34,7 +34,7 @@ const FairyTale = () => {
         <img src={data?.image} alt={data?.text} className={classBem('img')} />
         <div className={classBem('buttons')}>
           <button className={classBem('button')} onClick={() => navigate('/')}>
-            &equiv;
+            &#9776;
           </button>
           <button
             disabled={page === 0}
