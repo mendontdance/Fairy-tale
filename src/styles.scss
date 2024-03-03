@@ -29,6 +29,10 @@ button {
   overflow: hidden;
 }
 
+fieldset {
+  border: none;
+}
+
 @media screen and (max-width: 700px) {
   html,
   body {
