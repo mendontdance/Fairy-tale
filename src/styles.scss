@@ -4,11 +4,12 @@
 
 html,
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   position: relative;
-  min-width: 320px;
+  max-width: 400px;
   background-color: #020310;
+  height: 100vh;
 }
 
 button {
@@ -21,7 +22,6 @@ button {
 
 #root {
   background-color: #ebf2fa;
-  width: 320px;
   margin: 0 auto;
   position: relative;
 }
