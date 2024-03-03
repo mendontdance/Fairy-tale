@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-width: 320px;
+  background-color: #020310;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+#root {
+  background-color: #ebf2fa;
+  width: 320px;
+  margin: 0 auto;
+  position: relative;
+}

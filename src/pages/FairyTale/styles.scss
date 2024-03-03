@@ -1,16 +1,16 @@
 .fairy-tale {
   display: flex;
   flex-direction: column;
-  width: inherit;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 30px auto;
   max-width: 500px;
-  padding: 0 20px;
+  position: relative;
+  max-height: 500px;
+  overflow: scroll;
 
   &__title {
-    margin: 15px;
-    padding-bottom: 20px;
+    margin: 15px 0 0;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -20,29 +20,37 @@
   }
 
   &__text {
-    margin: 0 0 20px;
+    margin-top: 40px;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
+    font-size: 24px;
     text-align: center;
     color: #003366;
+    padding: 0 15px;
   }
 
   &__img {
     width: 100%;
     height: 100%;
     background-size: cover;
+    padding: 15px 15px 10px;
+  }
+
+  &__panel {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #06175d;
   }
 
   &__buttons {
     width: 100%;
     color: #ebf2fa;
-    position: fixed;
-    bottom: 0;
     margin: 10px 0 0;
     display: flex;
-    gap: 10px;
+    gap: 7px;
     justify-content: space-around;
     align-items: center;
     background-color: #06175d;
@@ -53,10 +61,10 @@
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
     color: #06175d;
     background-color: #ebf2fa;
-    padding: 7px;
+    padding: 0 18px;
+    font-size: 40px;
     border-radius: 10px;
     height: 50px;
     transition: all .3s ease-in-out;
@@ -64,7 +72,7 @@
     cursor: pointer;
 
     &_arrow {
-      padding: 0 13px;
+      padding: 0 10px;
       font-size: 40px;
     }
 

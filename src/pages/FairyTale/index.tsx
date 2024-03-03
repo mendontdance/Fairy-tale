@@ -26,39 +26,43 @@ const FairyTale = () => {
 
   return (
     <div className={classBem()}>
-      {data?.title && <div className={classBem('title')}>{data?.title}</div>}
-      <div className={classBem('text')}>{data?.text}</div>
-      <img src={data?.image} alt={data?.text} className={classBem('img')} />
-      <div className={classBem('buttons')}>
-        <button className={classBem('button')} onClick={() => navigate('/')}>
-          Назад в меню
-        </button>
-        <button
-          disabled={page === 0}
-          className={classBem('button', { arrow: true, disabled: page === 0 })}
-          onClick={() =>
-            setPage((prevState) => {
-              if (prevState - 1 < 0) return prevState;
-              return --prevState;
-            })
-          }
-        >
-          &#8666;
-        </button>
-        {/*<button className={classBem('button')} onClick={() => setPage((prevState) => prevState++)}>*/}
-        {/*  res*/}
-        {/*</button>*/}
-        <button
-          className={classBem('button', { arrow: true, disabled: page + 1 === runtime?.fairyTale?.data?.length })}
-          onClick={() =>
-            setPage((prevState) => {
-              if (prevState + 1 === runtime?.fairyTale?.data?.length) return prevState;
-              return ++prevState;
-            })
-          }
-        >
-          &#8667;
-        </button>
+      <div className={classBem('text-container')}>
+        {data?.title && <div className={classBem('title')}>{data?.title}</div>}
+        <div className={classBem('text')}>{data?.text}</div>
+      </div>
+      <div className={classBem('panel')}>
+        <img src={data?.image} alt={data?.text} className={classBem('img')} />
+        <div className={classBem('buttons')}>
+          <button className={classBem('button')} onClick={() => navigate('/')}>
+            &equiv;
+          </button>
+          <button
+            disabled={page === 0}
+            className={classBem('button', { arrow: true, disabled: page === 0 })}
+            onClick={() =>
+              setPage((prevState) => {
+                if (prevState - 1 < 0) return prevState;
+                return --prevState;
+              })
+            }
+          >
+            &#8666;
+          </button>
+          {/*<button className={classBem('button')} onClick={() => setPage((prevState) => prevState++)}>*/}
+          {/*  res*/}
+          {/*</button>*/}
+          <button
+            className={classBem('button', { arrow: true, disabled: page + 1 === runtime?.fairyTale?.data?.length })}
+            onClick={() =>
+              setPage((prevState) => {
+                if (prevState + 1 === runtime?.fairyTale?.data?.length) return prevState;
+                return ++prevState;
+              })
+            }
+          >
+            &#8667;
+          </button>
+        </div>
       </div>
     </div>
   );

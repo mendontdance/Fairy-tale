@@ -4,6 +4,7 @@ import App from './components/App';
 import { HashRouter } from 'react-router-dom';
 import { RootStore } from './store/store';
 import { RootStoreContext } from './store/RootStoreContext';
+import './styles.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 const store = new RootStore();
