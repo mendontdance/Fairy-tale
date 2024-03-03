@@ -14,10 +14,10 @@
     font-family: "Orelega One", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 52px;
+    font-size: 40px;
     text-align: center;
-    color: #003366;
-    border-bottom: 1px dashed #003366;
+    color: #333;
+    border-bottom: 1px dashed #333;
   }
 
   &__subtitle {
@@ -27,7 +27,7 @@
     font-style: normal;
     font-size: 25px;
     text-align: center;
-    color: #003366;
+    color: #333;
   }
 
   &__text {
@@ -48,7 +48,7 @@
   }
 
   &__button {
-    background-color: #003366;
+    background-color: #333;
     padding: 10px;
     border-radius: 10px;
     font-family: "Roboto", sans-serif;
@@ -56,14 +56,14 @@
     font-style: normal;
     font-size: 15px;
     color: #ebf2fa;
-    border: 1px solid #003366;
+    border: 1px solid #333;
     transition: all .3s ease-in-out;
     box-shadow: 0 4px 20px rgba(#000, .6);
 
     &:hover {
       background-color: #ebf2fa;
-      color: #003366;
-      border: 1px solid #003366;
+      color: #333;
+      border: 1px solid #333;
     }
   }
 }
