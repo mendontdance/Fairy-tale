@@ -1,0 +1,33 @@
+.mini-test {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+
+  &__choice {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-left: 10px;
+    text-align: left;
+  }
+
+  &__text {
+    width: 100%;
+    background-color: transparent;
+    padding: 10px 5px 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  &__title {
+    padding: 40px 15px 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    color: #333;
+  }
+}

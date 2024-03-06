@@ -4,6 +4,7 @@ import bem from 'bem-cn';
 import { useNavigate } from 'react-router-dom';
 import { useStore } from '../../store/RootStoreContext';
 import { IFairyTaleData } from '../../configs/types';
+import { MiniTest } from '../../components';
 import './styles.scss';
 
 const FairyTale = () => {
@@ -28,31 +29,7 @@ const FairyTale = () => {
     <div className={classBem()}>
       <div className={classBem('text-container')}>
         {data?.test ? (
-          <>
-            <div className={classBem('title')}>{result ? result : data.test.text}</div>
-            <fieldset className={classBem('text')}>
-              {data.test.variants.map((elem) => {
-                return (
-                  <div className={classBem('text')} key={elem}>
-                    <input
-                      type="radio"
-                      id={elem}
-                      key={elem}
-                      value={elem}
-                      onClick={() => {
-                        if (elem === data?.rightAnswer) {
-                          setResult(data?.success);
-                        } else {
-                          setResult(data?.error);
-                        }
-                      }}
-                    />
-                    <label htmlFor={elem}>{elem}</label>
-                  </div>
-                );
-              })}
-            </fieldset>
-          </>
+          <MiniTest data={data} setResult={setResult} result={result} />
         ) : (
           <>
             {data?.title && <div className={classBem('title')}>{data?.title}</div>}
