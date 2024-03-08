@@ -9,9 +9,9 @@ import './styles.scss';
 
 const FairyTale = () => {
   const classBem = bem('fairy-tale');
+  const navigate = useNavigate();
   const { runtime } = useStore();
   const [page, setPage] = useState(0);
-  const navigate = useNavigate();
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
   const [result, setResult] = useState<string | undefined>(undefined);
 
