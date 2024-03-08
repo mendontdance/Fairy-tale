@@ -29,6 +29,7 @@
     width: inherit;
 
     &-container {
+      height: 100%;
       overflow-y: scroll;
       scrollbar-width: none;
       overflow-x: hidden;

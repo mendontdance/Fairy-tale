@@ -22,12 +22,7 @@ export const FirstFairyTale = [
     text: 'Ответьте быстренько на тест',
     test: {
       text: 'Сколько будет 5 + 6',
-      variants: [
-        'Да',
-        'Нет',
-        '11',
-        'Sardinia insula Romana est. Creta, Rhodus, Naxus, Samos, Chios, Lesbos, Lemnos, Euboea sunt insulae Graecae. In Graecia multae insulae sunt. In Italia et in Graecia sunt multa oppida. In Gallia et in Germania multi sunt fluvii. Suntne multi fluvii et multa oppida in Arabia? In Arabia non multi, sed pauci fluvii sunt et pauca oppida',
-      ],
+      variants: ['Да', 'Нет', '11', 'Sardinia insula Romana est.'],
     },
     rightAnswer: '11',
     success: 'МОЛОДЕЦ! Ты выучил',

@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import bem from 'bem-cn';
 import { IMiniTest } from './types';
 import './styles.scss';
+import Input from '../Input';
 
 const MiniTest: FC<IMiniTest> = ({ data, setResult, result }) => {
   const classBem = bem('mini-test');
@@ -19,19 +20,7 @@ const MiniTest: FC<IMiniTest> = ({ data, setResult, result }) => {
       <div className={classBem('title')}>{result ? result : data.test?.text}</div>
       <fieldset className={classBem('choice')}>
         {data.test?.variants.map((dataItem) => {
-          return (
-            <div className={classBem('text')} key={dataItem}>
-              <input
-                className={classBem('input')}
-                type="radio"
-                id={dataItem}
-                key={dataItem}
-                value={dataItem}
-                onClick={() => onCLick(dataItem)}
-              />
-              <label htmlFor={dataItem}>{dataItem}</label>
-            </div>
-          );
+          return <Input dataItem={dataItem} onClick={onCLick} key={dataItem} data={data} />;
         })}
       </fieldset>
     </div>

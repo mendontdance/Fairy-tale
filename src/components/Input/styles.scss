@@ -1,0 +1,29 @@
+.input-container {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  background-color: transparent;
+  padding: 10px 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+
+  &_answer {
+    &_right {
+      background-color: green;
+    }
+
+    &_wrong {
+      background-color: red;
+    }
+  }
+
+  &__input {
+    margin: 4px 10px 0 0;
+    cursor: pointer;
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+}
