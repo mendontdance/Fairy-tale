@@ -4,20 +4,27 @@ import { IInput } from './types';
 import './styles.scss';
 
 const Input: FC<IInput> = ({ dataItem, onClick, data }) => {
-  const [state, setState] = useState('');
+  const [answer, setAnswer] = useState('');
   const classBem = bem('input-container');
+
+  const onCLick = () => {
+    onClick(dataItem);
+    if (dataItem === data?.rightAnswer) {
+      setAnswer('right');
+    } else if (dataItem !== data?.rightAnswer) {
+      setAnswer('wrong');
+    }
+  };
+
   return (
-    <div className={classBem({ answer: state })} key={dataItem}>
+    <div className={classBem({ answer: answer })} key={dataItem}>
       <input
         className={classBem('input')}
         type="radio"
         id={dataItem}
         key={dataItem}
         value={dataItem}
-        onClick={() => {
-          onClick(dataItem);
-          dataItem === data?.rightAnswer ? setState('right') : setState('wrong');
-        }}
+        onClick={onCLick}
       />
       <label htmlFor={dataItem} className={classBem('label')}>
         {dataItem}
