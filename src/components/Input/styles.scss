@@ -18,12 +18,24 @@
     }
   }
 
+  &_disabled {
+    cursor: not-allowed;
+  }
+
   &__input {
     margin: 4px 10px 0 0;
     cursor: pointer;
+
+    &_disabled {
+      cursor: not-allowed;
+    }
   }
 
   &__label {
     cursor: pointer;
+
+    &_disabled {
+      cursor: not-allowed;
+    }
   }
 }
