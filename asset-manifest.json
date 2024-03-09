@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Fairy-tale/static/css/main.b5c8fd27.css",
-    "main.js": "/Fairy-tale/static/js/main.16197543.js",
+    "main.css": "/Fairy-tale/static/css/main.c6573546.css",
+    "main.js": "/Fairy-tale/static/js/main.8b67620b.js",
     "static/media/Rome.mp3": "/Fairy-tale/static/media/Rome.a82a305c5f24ca12049a.mp3",
     "static/media/Rome2.mp3": "/Fairy-tale/static/media/Rome2.cab02fc36d542d99ed9e.mp3",
     "static/media/Rome.jpeg": "/Fairy-tale/static/media/Rome.129a3f19a400767ee9ae.jpeg",
     "index.html": "/Fairy-tale/index.html",
-    "main.b5c8fd27.css.map": "/Fairy-tale/static/css/main.b5c8fd27.css.map",
-    "main.16197543.js.map": "/Fairy-tale/static/js/main.16197543.js.map"
+    "main.c6573546.css.map": "/Fairy-tale/static/css/main.c6573546.css.map",
+    "main.8b67620b.js.map": "/Fairy-tale/static/js/main.8b67620b.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5c8fd27.css",
-    "static/js/main.16197543.js"
+    "static/css/main.c6573546.css",
+    "static/js/main.8b67620b.js"
   ]
 }
