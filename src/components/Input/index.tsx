@@ -1,9 +1,9 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import bem from 'bem-cn';
 import { IInput } from './types';
 import './styles.scss';
 
-const Input: FC<IInput> = ({ dataItem, onClick, data }) => {
+const Input: FC<IInput> = ({ dataItem, onClick, data, isDisabled }) => {
   const [answer, setAnswer] = useState('');
   const [disabled, setDisabled] = useState(false);
   const classBem = bem('input-container');
@@ -17,6 +17,10 @@ const Input: FC<IInput> = ({ dataItem, onClick, data }) => {
       setAnswer('wrong');
     }
   };
+
+  useEffect(() => {
+    setDisabled(!!isDisabled);
+  }, [isDisabled]);
 
   return (
     <div className={classBem({ answer: answer, disabled: disabled })} key={dataItem}>

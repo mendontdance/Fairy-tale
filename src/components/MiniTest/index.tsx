@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import bem from 'bem-cn';
 import { IMiniTest } from './types';
 import './styles.scss';
@@ -6,10 +6,12 @@ import Input from '../Input';
 
 const MiniTest: FC<IMiniTest> = ({ data, setResult, result }) => {
   const classBem = bem('mini-test');
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const onCLick = (answer: string) => {
     if (answer === data?.rightAnswer) {
       setResult(data?.success);
+      setIsDisabled(true);
     } else {
       setResult(data?.error);
     }
@@ -20,7 +22,7 @@ const MiniTest: FC<IMiniTest> = ({ data, setResult, result }) => {
       <div className={classBem('title')}>{result ? result : data.test?.text}</div>
       <fieldset className={classBem('choice')}>
         {data.test?.variants.map((dataItem) => {
-          return <Input dataItem={dataItem} onClick={onCLick} key={dataItem} data={data} />;
+          return <Input dataItem={dataItem} onClick={onCLick} key={dataItem} data={data} isDisabled={isDisabled} />;
         })}
       </fieldset>
     </div>
