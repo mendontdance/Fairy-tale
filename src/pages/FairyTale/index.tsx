@@ -51,19 +51,21 @@ const FairyTale = () => {
               setResult(undefined);
             }}
           />
-          <Button
-            className={classBem('audio')}
-            text={play ? '\u25B6' : '\u275A\u275A'}
-            onClick={() => {
-              if (play) {
-                ref.current?.play();
-                setPlay(false);
-              } else {
-                ref.current?.pause();
-                setPlay(true);
-              }
-            }}
-          />
+          {data?.audio && (
+            <Button
+              className={classBem('audio')}
+              text={play ? '\u25B6' : '\u275A\u275A'}
+              onClick={() => {
+                if (play) {
+                  ref.current?.play();
+                  setPlay(false);
+                } else {
+                  ref.current?.pause();
+                  setPlay(true);
+                }
+              }}
+            />
+          )}
           <Button
             disabled={page === 0}
             text="&#8666;"
