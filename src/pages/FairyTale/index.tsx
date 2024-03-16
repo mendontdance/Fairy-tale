@@ -35,7 +35,7 @@ const FairyTale = () => {
         ) : (
           <>
             {data?.title && <div className={classBem('title')}>{data?.title}</div>}
-            {data?.audio && <audio ref={ref} src={data.audio} preload="auto" autoPlay={runtime.audioPlay} />}
+            {data?.audio && <audio ref={ref} src={data.audio} preload="auto" />}
             <div className={classBem('text')}>{data?.text}</div>
           </>
         )}
@@ -67,8 +67,9 @@ const FairyTale = () => {
             disabled={page === 0}
             className={classBem('button', { left: true })}
             onClick={() => {
+              runtime.setAudioPlay(false);
+              setResult(undefined);
               setPage((prevState) => {
-                setResult(undefined);
                 if (prevState - 1 < 0) return prevState;
                 return --prevState;
               });
@@ -78,6 +79,7 @@ const FairyTale = () => {
             disabled={page + 1 === runtime?.fairyTale?.data?.length}
             className={classBem('button', { right: true })}
             onClick={() => {
+              runtime.setAudioPlay(false);
               setResult(undefined);
               setPage((prevState) => {
                 if (prevState + 1 === runtime?.fairyTale?.data?.length) return prevState;

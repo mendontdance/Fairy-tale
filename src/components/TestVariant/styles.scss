@@ -2,11 +2,11 @@
   display: flex;
   align-items: flex-start;
   width: 100%;
-  background-color: transparent;
   padding: 10px 5px;
-  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 20px;
+  border: 1px solid #000;
+  cursor: pointer;
 
   &_answer {
     &_right {

@@ -24,7 +24,6 @@ const MainPage = () => {
               onClick={() => {
                 navigate('/story');
                 runtime.setFairyTale(fairyTale);
-                runtime.setAudioPlay(true);
               }}
             >
               {fairyTale.name}
