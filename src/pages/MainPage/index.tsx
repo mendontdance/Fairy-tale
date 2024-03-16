@@ -13,7 +13,7 @@ const MainPage = () => {
 
   return (
     <div className={classBem()}>
-      <h1 className={classBem('title')}>Добро пожаловать в удивительный мир Латыни!</h1>
+      <h1 className={classBem('title')}>Welcome to the Latin World!</h1>
       <div className={classBem('buttons')}>
         {fairyTalesData.map((fairyTale) => {
           return (
