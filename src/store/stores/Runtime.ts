@@ -10,4 +10,10 @@ export class Runtime {
   setFairyTale(value: IFairyTale) {
     this.fairyTale = value;
   }
+
+  audioPlay: boolean = false;
+
+  setAudioPlay(audioPlay: boolean) {
+    this.audioPlay = audioPlay;
+  }
 }

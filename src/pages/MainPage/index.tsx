@@ -14,12 +14,6 @@ const MainPage = () => {
   return (
     <div className={classBem()}>
       <h1 className={classBem('title')}>Добро пожаловать в удивительный мир Латыни!</h1>
-      <h2 className={classBem('subtitle')}>
-        Изучайте вместе с нами язык, который дал жизнь многим другим языкам мира!
-      </h2>
-      <p className={classBem('text')}>
-        Для изучения просто кликните по любой из сказок и начинайте узнавать язык с нуля
-      </p>
       <div className={classBem('buttons')}>
         {fairyTalesData.map((fairyTale) => {
           return (
@@ -30,6 +24,7 @@ const MainPage = () => {
               onClick={() => {
                 navigate('/story');
                 runtime.setFairyTale(fairyTale);
+                runtime.setAudioPlay(true);
               }}
             >
               {fairyTale.name}

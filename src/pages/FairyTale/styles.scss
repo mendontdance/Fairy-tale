@@ -9,7 +9,7 @@
 
   &__title {
     padding: 40px 15px 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Orelega One", serif;
     font-weight: 700;
     font-style: normal;
     font-size: 28px;
@@ -19,7 +19,7 @@
 
   &__text {
     margin-top: 40px;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Orelega One", serif;
     font-weight: 400;
     font-style: normal;
     font-size: 20px;
@@ -52,8 +52,29 @@
     flex-direction: column;
   }
 
-  &__audio {
-    font-size: 20px;
+
+
+  &__button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+
+    &_home {
+      background-image: url('https://cdn-icons-png.flaticon.com/128/1828/1828866.png');
+    }
+
+    &_audio {
+      font-size: 20px;
+      background-image: url('https://cdn-icons-png.flaticon.com/128/6996/6996058.png');
+    }
+
+    &_left {
+      background-image: url('https://cdn-icons-png.flaticon.com/128/271/271218.png');
+    }
+
+    &_right {
+      background-image: url('https://cdn-icons-png.flaticon.com/128/271/271226.png');
+    }
   }
 
   &__buttons {

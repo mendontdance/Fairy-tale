@@ -16,10 +16,9 @@ const FairyTale = () => {
   const [page, setPage] = useState(0);
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
   const [result, setResult] = useState<string | undefined>(undefined);
-  const [play, setPlay] = useState(false);
 
   if (runtime.fairyTale === null) {
-    navigate('/');
+    navigate('https://mendontdance.github.io/Fairy-tale/');
   }
 
   useEffect(() => {
@@ -36,7 +35,7 @@ const FairyTale = () => {
         ) : (
           <>
             {data?.title && <div className={classBem('title')}>{data?.title}</div>}
-            {data?.audio && <audio ref={ref} src={data.audio} preload="auto" autoPlay />}
+            {data?.audio && <audio ref={ref} src={data.audio} preload="auto" autoPlay={runtime.audioPlay} />}
             <div className={classBem('text')}>{data?.text}</div>
           </>
         )}
@@ -45,33 +44,30 @@ const FairyTale = () => {
         {data?.image && <img src={data?.image} alt={data?.text} className={classBem('img')} />}
         <div className={classBem('buttons')}>
           <Button
-            text="&#9776;"
+            className={classBem('button', { home: true })}
             onClick={() => {
               navigate('/');
               setResult(undefined);
             }}
           />
-          {data?.audio && (
-            <Button
-              className={classBem('audio')}
-              text={play ? '\u25B6' : '\u275A\u275A'}
-              onClick={() => {
-                if (play) {
-                  ref.current?.play();
-                  setPlay(false);
-                } else {
-                  ref.current?.pause();
-                  setPlay(true);
-                }
-              }}
-            />
-          )}
+          <Button
+            disabled={!data?.audio}
+            className={classBem('button', { audio: true })}
+            onClick={() => {
+              if (!runtime.audioPlay) {
+                ref.current?.play();
+                runtime.setAudioPlay(true);
+              } else {
+                ref.current?.pause();
+                runtime.setAudioPlay(false);
+              }
+            }}
+          />
           <Button
             disabled={page === 0}
-            text="&#8666;"
+            className={classBem('button', { left: true })}
             onClick={() => {
               setPage((prevState) => {
-                setPlay(false);
                 setResult(undefined);
                 if (prevState - 1 < 0) return prevState;
                 return --prevState;
@@ -80,9 +76,8 @@ const FairyTale = () => {
           />
           <Button
             disabled={page + 1 === runtime?.fairyTale?.data?.length}
-            text="&#8667;"
+            className={classBem('button', { right: true })}
             onClick={() => {
-              setPlay(false);
               setResult(undefined);
               setPage((prevState) => {
                 if (prevState + 1 === runtime?.fairyTale?.data?.length) return prevState;
