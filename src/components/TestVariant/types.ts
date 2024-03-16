@@ -5,4 +5,5 @@ export interface IInput {
   onClick: (value: string) => void;
   data?: IFairyTaleData;
   isDisabled?: boolean;
+  className?: string;
 }

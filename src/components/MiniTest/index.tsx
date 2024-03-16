@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 import bem from 'bem-cn';
 import { IMiniTest } from './types';
+import TestVariant from '../TestVariant';
 import './styles.scss';
-import Input from '../Input';
 
 const MiniTest: FC<IMiniTest> = ({ data, setResult, result }) => {
   const classBem = bem('mini-test');
@@ -22,7 +22,9 @@ const MiniTest: FC<IMiniTest> = ({ data, setResult, result }) => {
       <div className={classBem('title')}>{result ? result : data.test?.text}</div>
       <fieldset className={classBem('choice')}>
         {data.test?.variants.map((dataItem) => {
-          return <Input dataItem={dataItem} onClick={onCLick} key={dataItem} data={data} isDisabled={isDisabled} />;
+          return (
+            <TestVariant dataItem={dataItem} onClick={onCLick} key={dataItem} data={data} isDisabled={isDisabled} />
+          );
         })}
       </fieldset>
     </div>

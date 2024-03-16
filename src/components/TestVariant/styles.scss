@@ -1,4 +1,4 @@
-.input-container {
+.test-container {
   display: flex;
   align-items: flex-start;
   width: 100%;
@@ -22,7 +22,7 @@
     cursor: not-allowed;
   }
 
-  &__input {
+  &__variant {
     margin: 4px 10px 0 0;
     cursor: pointer;
 

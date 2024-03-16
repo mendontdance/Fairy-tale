@@ -18,7 +18,7 @@ const FairyTale = () => {
   const [result, setResult] = useState<string | undefined>(undefined);
 
   if (runtime.fairyTale === null) {
-    navigate('https://mendontdance.github.io/Fairy-tale/');
+    navigate('/');
   }
 
   useEffect(() => {
