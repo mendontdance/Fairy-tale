@@ -7,8 +7,8 @@ export interface IFairyTale {
 export interface IFairyTaleData {
   text: string;
   title?: string;
-  image?: any;
-  audio?: any;
+  image?: string;
+  audio?: string;
   test?: IFairyTaleTest;
   rightAnswer?: string;
   success?: string;

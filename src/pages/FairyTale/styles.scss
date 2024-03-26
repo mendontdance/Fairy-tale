@@ -6,6 +6,7 @@
   margin: 0 auto;
   position: relative;
   height: 657px;
+  transition: all 1s ease-in-out;
 
   &__title {
     padding: 40px 15px 0;
@@ -27,6 +28,8 @@
     line-height: 25px;
     letter-spacing: .5px;
     width: inherit;
+    min-width: 25px;
+    transition: all 1s ease-in-out;
 
     &-container {
       padding: 10px 0;
@@ -34,6 +37,10 @@
       overflow-y: scroll;
       scrollbar-width: none;
       overflow-x: hidden;
+    }
+
+    &_previous {
+     color: #7d838a;
     }
   }
 
@@ -50,40 +57,6 @@
     bottom: 0;
     display: flex;
     flex-direction: column;
-  }
-
-  &__button {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 24px 24px;
-
-    &_home {
-      background-image: url('https://cdn-icons-png.flaticon.com/128/1828/1828866.png');
-    }
-
-    &_audio {
-      font-size: 20px;
-      background-image: url('https://cdn-icons-png.flaticon.com/128/6996/6996058.png');
-    }
-
-    &_left {
-      background-image: url('https://cdn-icons-png.flaticon.com/128/271/271218.png');
-    }
-
-    &_right {
-      background-image: url('https://cdn-icons-png.flaticon.com/128/271/271226.png');
-    }
-  }
-
-  &__buttons {
-    width: 100%;
-    color: #ebf2fa;
-    display: flex;
-    gap: 10px;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #666;
-    height: 75px;
   }
 }
 
