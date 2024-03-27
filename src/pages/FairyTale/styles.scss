@@ -6,7 +6,6 @@
   margin: 0 auto;
   position: relative;
   height: 657px;
-  transition: all 1s ease-in-out;
 
   &__title {
     padding: 40px 15px 0;
@@ -29,7 +28,6 @@
     letter-spacing: .5px;
     width: inherit;
     min-width: 25px;
-    transition: all 1s ease-in-out;
 
     &-container {
       padding: 10px 0;
