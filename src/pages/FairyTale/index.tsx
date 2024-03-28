@@ -91,6 +91,19 @@ const FairyTale = () => {
     }
   }, [smallPause, runtime.audioPlay, page]);
 
+  const animateCurrentText = () => {
+    animate(
+      linear,
+      (progress) => {
+        if (elementRef.current) {
+          elementRef.current.style.opacity = String(progress);
+        }
+      },
+      300,
+      () => setSmallPause(true)
+    );
+  };
+
   useEffect(() => {
     animate(
       linear,
@@ -101,18 +114,7 @@ const FairyTale = () => {
         }
       },
       700,
-      () => {
-        animate(
-          linear,
-          (progress) => {
-            if (elementRef.current) {
-              elementRef.current.style.opacity = String(progress);
-            }
-          },
-          300,
-          () => setSmallPause(true)
-        );
-      }
+      animateCurrentText
     );
   }, [page, runtime?.fairyTale?.data]);
 
