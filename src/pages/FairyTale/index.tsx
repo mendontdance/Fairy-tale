@@ -20,6 +20,7 @@ const FairyTale = () => {
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
   const [result, setResult] = useState<string | undefined>(undefined);
   const [prevData, setPrevData] = useState<IFairyTaleData | undefined>(undefined);
+  const [smallPause, setSmallPause] = useState(false);
 
   if (!runtime.fairyTale) {
     navigate('/');
@@ -27,6 +28,7 @@ const FairyTale = () => {
 
   const onEnded = () => {
     setResult(undefined);
+    setSmallPause(false);
     setPage((prevState) => {
       if (prevState + 1 === runtime?.fairyTale?.data?.length) {
         runtime.setAudioPlay(false);
@@ -80,6 +82,16 @@ const FairyTale = () => {
   }, [page, runtime?.fairyTale?.data]);
 
   useEffect(() => {
+    if (smallPause && runtime.audioPlay) {
+      ref.current?.play();
+      runtime.setAudioPlay(true);
+    } else if (!runtime.audioPlay) {
+      runtime.setAudioPlay(false);
+      ref.current?.pause();
+    }
+  }, [smallPause, runtime.audioPlay, page]);
+
+  useEffect(() => {
     animate(
       linear,
       (progress) => {
@@ -88,7 +100,7 @@ const FairyTale = () => {
           elementRef1.current.style.transform = `translateY(${-57 + progress * 57 + 'px'})`;
         }
       },
-      400,
+      700,
       () => {
         animate(
           linear,
@@ -97,12 +109,11 @@ const FairyTale = () => {
               elementRef.current.style.opacity = String(progress);
             }
           },
-          100
+          300,
+          () => setSmallPause(true)
         );
       }
     );
-
-    console.log(1111);
   }, [page, runtime?.fairyTale?.data]);
 
   return (
@@ -113,15 +124,7 @@ const FairyTale = () => {
         ) : (
           <>
             {data?.title && <div className={classBem('title')}>{data?.title}</div>}
-            {data?.audio && (
-              <audio
-                ref={ref}
-                src={data?.audio}
-                preload="auto"
-                autoPlay={runtime.audioPlay}
-                onEnded={() => setTimeout(onEnded, 1000)}
-              />
-            )}
+            {data?.audio && <audio ref={ref} src={data?.audio} preload="auto" onEnded={onEnded} />}
             <div className={classBem('text', { current: true })} ref={elementRef}>
               {data?.text}
             </div>
