@@ -144,6 +144,22 @@ const FairyTale = () => {
     );
   };
 
+  useEffect(() => {
+    if (runtime.audioPlay) {
+      animate(
+        linear,
+        (progress) => {
+          if (elementRef1.current && elementRef.current) {
+            elementRef.current.style.opacity = '0';
+            elementRef1.current.style.transform = `translateY(${-57 + progress * 57 + 'px'})`;
+          }
+        },
+        700,
+        animateCurrentText
+      );
+    }
+  }, [page, runtime?.fairyTale?.data]);
+
   return (
     <div className={classBem()}>
       <div className={classBem('text-container')}>
