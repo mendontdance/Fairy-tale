@@ -11,7 +11,6 @@ const TestVariant: FC<IInput> = ({ dataItem, onClick, data, isDisabled, classNam
   const onCLickVariant = () => {
     if (!disabled) {
       onClick(dataItem);
-      setDisabled(true);
       if (dataItem === data?.rightAnswer) {
         setAnswer('right');
       } else if (dataItem !== data?.rightAnswer) {
@@ -23,7 +22,6 @@ const TestVariant: FC<IInput> = ({ dataItem, onClick, data, isDisabled, classNam
   useEffect(() => {
     setDisabled(!!isDisabled);
   }, [isDisabled]);
-  console.log(disabled);
 
   const inputClassName = className
     ? `${classBem('variant', { disabled: disabled })} ${className}`

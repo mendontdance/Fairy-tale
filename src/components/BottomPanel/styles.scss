@@ -18,12 +18,14 @@
     }
 
     &_play {
-      font-size: 20px;
       background-image: url('https://cdn-icons-png.flaticon.com/128/9073/9073187.png');
     }
 
+    &_test {
+      background-image: url('../../configs/data_images/test.svg');
+    }
+
     &_pause {
-      font-size: 20px;
       background-image: url('https://cdn-icons-png.flaticon.com/128/2920/2920686.png');
     }
 

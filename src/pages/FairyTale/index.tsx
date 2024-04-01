@@ -5,9 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useStore } from '../../store/RootStoreContext';
 import BottomPanel from '../../components/BottomPanel';
 import { IFairyTaleData } from '../../configs/types';
-import { MiniTest } from '../../components';
-import './styles.scss';
 import { animate, linear } from '../../utils';
+import './styles.scss';
 
 const FairyTale = () => {
   const classBem = bem('fairy-tale');
@@ -18,7 +17,6 @@ const FairyTale = () => {
   const { runtime } = useStore();
   const [page, setPage] = useState(0);
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
-  const [result, setResult] = useState<string | undefined>(undefined);
   const [prevData, setPrevData] = useState<IFairyTaleData | undefined>(undefined);
   const [smallPause, setSmallPause] = useState(false);
 
@@ -27,7 +25,6 @@ const FairyTale = () => {
   }
 
   const onEnded = () => {
-    setResult(undefined);
     setSmallPause(false);
     setPage((prevState) => {
       if (prevState + 1 === runtime?.fairyTale?.data?.length) {
@@ -39,8 +36,13 @@ const FairyTale = () => {
   };
 
   const onClickHome = () => {
+    runtime.setAudioPlay(false);
     navigate('/');
-    setResult(undefined);
+  };
+
+  const onClickTest = () => {
+    runtime.setAudioPlay(false);
+    navigate('/test');
   };
 
   const onClickAudio = () => {
@@ -54,19 +56,57 @@ const FairyTale = () => {
   };
 
   const onClickBack = () => {
-    setResult(undefined);
     setPage((prevState) => {
       if (prevState - 1 < 0) return prevState;
       return --prevState;
     });
+    runtime.setAudioPlay(false);
+
+    animate(
+      linear,
+      (progress) => {
+        if (elementRef1.current && elementRef.current) {
+          elementRef1.current.style.opacity = '0';
+          elementRef.current.style.transform = `translateY(${57 - progress * 57 + 'px'})`;
+        }
+      },
+      700,
+      () =>
+        animate(
+          linear,
+          (progress) => {
+            if (elementRef1.current) {
+              elementRef1.current.style.opacity = String(progress);
+            }
+          },
+          300,
+          () => setSmallPause(true)
+        )
+    );
   };
 
   const onClickForward = () => {
-    setResult(undefined);
-    setPage((prevState) => {
-      if (prevState + 1 === runtime?.fairyTale?.data?.length) return prevState;
-      return ++prevState;
-    });
+    if (page + 1 === runtime.fairyTale?.data?.length) {
+      navigate('/test');
+    } else {
+      setPage((prevState) => {
+        if (prevState + 1 === runtime?.fairyTale?.data?.length) return prevState;
+        return ++prevState;
+      });
+      runtime.setAudioPlay(false);
+    }
+
+    animate(
+      linear,
+      (progress) => {
+        if (elementRef1.current && elementRef.current) {
+          elementRef.current.style.opacity = '0';
+          elementRef1.current.style.transform = `translateY(${-57 + progress * 57 + 'px'})`;
+        }
+      },
+      700,
+      animateCurrentText
+    );
   };
 
   useEffect(() => {
@@ -89,7 +129,7 @@ const FairyTale = () => {
       runtime.setAudioPlay(false);
       ref.current?.pause();
     }
-  }, [smallPause, runtime.audioPlay, page]);
+  }, [smallPause, runtime.audioPlay, page, runtime]);
 
   const animateCurrentText = () => {
     animate(
@@ -104,37 +144,17 @@ const FairyTale = () => {
     );
   };
 
-  useEffect(() => {
-    animate(
-      linear,
-      (progress) => {
-        if (elementRef1.current && elementRef.current) {
-          elementRef.current.style.opacity = '0';
-          elementRef1.current.style.transform = `translateY(${-57 + progress * 57 + 'px'})`;
-        }
-      },
-      700,
-      animateCurrentText
-    );
-  }, [page, runtime?.fairyTale?.data]);
-
   return (
     <div className={classBem()}>
       <div className={classBem('text-container')}>
-        {data?.test ? (
-          <MiniTest data={data} setResult={setResult} result={result} />
-        ) : (
-          <>
-            {data?.title && <div className={classBem('title')}>{data?.title}</div>}
-            {data?.audio && <audio ref={ref} src={data?.audio} preload="auto" onEnded={onEnded} />}
-            <div className={classBem('text', { current: true })} ref={elementRef}>
-              {data?.text}
-            </div>
-            <div className={classBem('text', { previous: true })} ref={elementRef1}>
-              {prevData?.text}
-            </div>
-          </>
-        )}
+        {data?.title && <div className={classBem('title')}>{data?.title}</div>}
+        {data?.audio && <audio ref={ref} src={data?.audio} preload="auto" onEnded={onEnded} />}
+        <div className={classBem('text', { current: true })} ref={elementRef}>
+          {data?.text}
+        </div>
+        <div className={classBem('text', { previous: true })} ref={elementRef1}>
+          {prevData?.text}
+        </div>
       </div>
       <div className={classBem('panel')}>
         {data?.image && <img src={data?.image} alt={data?.text} className={classBem('img')} />}
@@ -145,6 +165,7 @@ const FairyTale = () => {
           onClickAudio={onClickAudio}
           onClickBack={onClickBack}
           onClickForward={onClickForward}
+          onClickTest={onClickTest}
         />
       </div>
     </div>

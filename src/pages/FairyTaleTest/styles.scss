@@ -1,0 +1,33 @@
+.fairy-tale-test {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  height: 657px;
+
+  &__text {
+    &-container {
+      padding: 10px 0;
+      height: 100%;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      overflow-x: hidden;
+    }
+  }
+
+  &__panel {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .fairy-tale-test {
+    height: 100dvh;
+  }
+}

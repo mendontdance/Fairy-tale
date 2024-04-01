@@ -2,6 +2,7 @@ export interface IFairyTale {
   id: number;
   name: string;
   data: IFairyTaleData[];
+  test: IFairyTaleData[];
 }
 
 export interface IFairyTaleData {

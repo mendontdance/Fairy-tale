@@ -24,4 +24,11 @@
     color: #333;
     width: 330px;
   }
+
+  &__counter {
+    position: absolute;
+    top: 3%;
+    right: 10%;
+    font-size: 18px;
+  }
 }
