@@ -14,7 +14,6 @@ const BottomPanel: FC<IPanel> = (props) => {
   return (
     <div className={classBem()}>
       <Button className={classBem('button', { home: true })} onClick={onClickHome} />
-      <Button className={classBem('button', { test: true })} onClick={onClickTest} />
       <Button
         disabled={!audio}
         className={classBem('button', { play: !audioPlay, pause: audioPlay })}
@@ -30,6 +29,7 @@ const BottomPanel: FC<IPanel> = (props) => {
         className={classBem('button', { right: true })}
         onClick={onClickForward}
       />
+      <Button className={classBem('button', { test: true })} onClick={onClickTest} />
     </div>
   );
 };

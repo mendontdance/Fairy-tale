@@ -17,17 +17,19 @@ const MainPage = () => {
       <div className={classBem('buttons')}>
         {fairyTalesData.map((fairyTale) => {
           return (
-            <button
-              className={classBem('button')}
-              type="button"
-              key={fairyTale.id}
-              onClick={() => {
-                navigate('/story');
-                runtime.setFairyTale(fairyTale);
-              }}
-            >
-              {fairyTale.name}
-            </button>
+            <div key={fairyTale.id}>
+              <button
+                className={classBem('button')}
+                type="button"
+                key={fairyTale.id}
+                onClick={() => {
+                  navigate('/story');
+                  runtime.setFairyTale(fairyTale);
+                }}
+              >
+                {fairyTale.name}
+              </button>
+            </div>
           );
         })}
       </div>
