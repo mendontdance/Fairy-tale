@@ -15,11 +15,17 @@ const MiniTest: FC<IMiniTest> = ({ data, result, counter, setCounter, page, setR
     if (answer === data?.rightAnswer) {
       setIsDisabled(true);
       if (firstAnswer) {
-        setCounter(++counter);
         setFirstAnswer(false);
       }
     } else {
+      setCounter(--counter);
       setFirstAnswer(false);
+    }
+    console.log(page + 1, runtime.fairyTale?.test.length);
+    if (page + 1 === runtime.fairyTale?.test.length) {
+      if (counter && answer === data?.rightAnswer) {
+        setResult(data?.success);
+      }
     }
   };
 
@@ -29,24 +35,24 @@ const MiniTest: FC<IMiniTest> = ({ data, result, counter, setCounter, page, setR
   }, [data]);
 
   useEffect(() => {
-    if (page + 1 === runtime?.fairyTale?.test.length) {
-      if (counter > runtime?.fairyTale?.test.length / 2) {
-        setResult(data?.success);
-      } else if (counter < runtime?.fairyTale?.test.length / 2) {
-        setResult(data?.error);
-      }
+    if (counter === 0) {
+      setResult(data?.error);
     }
   }, [counter, page]);
 
-  const counterText = `Результат: ${counter}`;
+  const counterText = `Тест: ${page + 1}/${runtime.fairyTale?.test.length}`;
+  const lives = Array(counter)
+    .fill('')
+    .map((elem, index) => <div className={classBem('life')} key={index} />);
 
   return (
     <div className={classBem()}>
       <div className={classBem('title')}>{result ? result : data?.test?.text}</div>
+      <div className={classBem('amount')}>{counterText}</div>
       {result === data?.success && <div className={classBem('title')}>Можете приступить к следующему уроку</div>}
       {!result && (
         <>
-          <div className={classBem('counter')}>{counterText}</div>
+          <div className={classBem('counter')}>{lives}</div>
           <fieldset className={classBem('choice')}>
             {data?.test?.variants.map((dataItem) => {
               return (

@@ -4,13 +4,13 @@ import { SecondFairyTale, SecondFairyTaleTest } from './fairy_tales/SecondFaityT
 export const DATA = {
   FIRST_FAIRY_TALE: {
     id: 0,
-    name: 'Fairy-tale about Rome',
+    name: 'Rome',
     data: FirstFairyTale,
     test: FirstFairyTaleTest,
   },
   SECOND_FAIRY_TALE: {
     id: 1,
-    name: 'Fairy-tale about Egypt',
+    name: 'Egypt',
     data: SecondFairyTale,
     test: SecondFairyTaleTest,
   },

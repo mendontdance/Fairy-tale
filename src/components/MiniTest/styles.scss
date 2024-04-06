@@ -27,8 +27,26 @@
 
   &__counter {
     position: absolute;
+    display: flex;
     top: 3%;
     right: 10%;
     font-size: 18px;
+    gap: 5px;
+  }
+
+  &__amount {
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    font-size: 18px;
+  }
+
+  &__life {
+    width: 20px;
+    height: 20px;
+    background-image: url("https://cdn-icons-png.flaticon.com/128/1828/1828866.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

@@ -35,7 +35,7 @@
     text-align: center;
   }
 
-  &__buttons {
+  &__container {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -45,20 +45,54 @@
   }
 
   &__button {
-    background-color: #333;
-    padding: 10px 20px;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
     font-weight: 500;
     font-style: normal;
     font-size: 20px;
-    color: #ebf2fa;
     transition: all .3s ease-in-out;
-    box-shadow: 0 4px 20px rgba(#000, .6);
     cursor: pointer;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ebf2fa;
+    padding: 5px;
+    border-radius: 50%;
 
     &:hover {
-      background-color: rgba(#333, .9);
+      opacity: .7;
     }
+
+    &_test {
+      background-image: url("../../configs/data_images/test.svg");
+    }
+
+    &_story {
+      background-image: url("https://cdn-icons-png.flaticon.com/128/1828/1828866.png");
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(#000, .6);
+    border-radius: 8px;
+    background-color: #333;
+    color: #ebf2fa;
+    padding: 10px;
+    width: 300px;
+  }
+
+  &__text {
+    margin: 0;
   }
 }
 
