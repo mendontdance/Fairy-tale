@@ -7,4 +7,5 @@ export interface IMiniTest {
   counter: number;
   setCounter: (counter: number) => void;
   page: number;
+  setPage: (page: number) => void;
 }

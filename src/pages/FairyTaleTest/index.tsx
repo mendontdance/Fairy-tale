@@ -54,6 +54,7 @@ const FairyTaleTest = () => {
           counter={counter}
           setCounter={setCounter}
           page={page}
+          setPage={setPage}
         />
       </div>
       <div className={classBem('panel')}>

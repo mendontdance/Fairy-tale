@@ -5,7 +5,7 @@ import { IMiniTest } from './types';
 import TestVariant from '../TestVariant';
 import './styles.scss';
 
-const MiniTest: FC<IMiniTest> = ({ data, result, counter, setCounter, page, setResult }) => {
+const MiniTest: FC<IMiniTest> = ({ data, result, counter, setCounter, page, setResult, setPage }) => {
   const classBem = bem('mini-test');
   const [isDisabled, setIsDisabled] = useState(false);
   const [firstAnswer, setFirstAnswer] = useState(true);
@@ -17,6 +17,7 @@ const MiniTest: FC<IMiniTest> = ({ data, result, counter, setCounter, page, setR
       if (firstAnswer) {
         setFirstAnswer(false);
       }
+      setTimeout(() => setPage(page + 1), 1000);
     } else {
       setCounter(--counter);
       setFirstAnswer(false);
