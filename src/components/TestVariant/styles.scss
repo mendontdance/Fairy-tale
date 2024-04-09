@@ -5,16 +5,16 @@
   padding: 10px 5px;
   font-weight: 400;
   font-size: 20px;
-  border: 1px solid #000;
+  background-color: #ddd;
   cursor: pointer;
 
   &_answer {
     &_right {
-      background-color: green;
+      background-color: #bfb;
     }
 
     &_wrong {
-      background-color: red;
+      background-color: #fbb;
     }
   }
 

@@ -41,7 +41,7 @@ const MiniTest: FC<IMiniTest> = ({ data, result, counter, setCounter, page, setR
     }
   }, [counter, page]);
 
-  const counterText = `Тест: ${page + 1}/${runtime.fairyTale?.test.length}`;
+  const counterText = `${page + 1}/${runtime.fairyTale?.test.length}`;
   const lives = Array(counter)
     .fill('')
     .map((elem, index) => <div className={classBem('life')} key={index} />);

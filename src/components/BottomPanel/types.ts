@@ -4,7 +4,7 @@ export interface IPanel {
   onClickHome: () => void;
   onClickAudio?: () => void;
   onClickBack?: () => void;
-  onClickForward: () => void;
+  onClickForward?: () => void;
   onClickTest?: () => void;
   result?: boolean;
 }

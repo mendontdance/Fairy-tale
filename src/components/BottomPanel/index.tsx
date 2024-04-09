@@ -6,7 +6,7 @@ import { IPanel } from './types';
 import './styles.scss';
 
 const BottomPanel: FC<IPanel> = (props) => {
-  const { audio, page, onClickHome, onClickAudio, onClickBack, onClickForward, onClickTest, result } = props;
+  const { audio, page, onClickHome, onClickAudio, onClickBack, onClickForward, onClickTest } = props;
   const classBem = bem('bottom-panel');
   const { runtime } = useStore();
   const { audioPlay } = runtime;
@@ -25,11 +25,11 @@ const BottomPanel: FC<IPanel> = (props) => {
         onClick={onClickBack}
       />
       <Button
-        disabled={page + 1 === runtime.fairyTale?.data?.length && !result}
+        disabled={typeof onClickForward !== 'function'}
         className={classBem('button', { right: true })}
         onClick={onClickForward}
       />
-      <Button className={classBem('button', { test: true })} onClick={onClickTest} />
+      <Button className={classBem('button', { test: !!audio, back: !audio })} onClick={onClickTest} />
     </div>
   );
 };

@@ -5,7 +5,6 @@ import bem from 'bem-cn';
 import { useNavigate } from 'react-router-dom';
 import { MiniTest } from '../../components';
 import { useStore } from '../../store/RootStoreContext';
-import { DATA } from '../../configs/data';
 import './styles.scss';
 
 const FairyTaleTest = () => {
@@ -22,20 +21,6 @@ const FairyTaleTest = () => {
 
   const onClickTest = () => {
     navigate('/story');
-  };
-
-  const onClickForward = () => {
-    const { fairyTale } = runtime;
-    if (result !== data?.success) {
-      setPage((prevState) => {
-        if (prevState + 1 === runtime?.fairyTale?.test?.length) return prevState;
-        return ++prevState;
-      });
-    } else {
-      const fairyTalesData = Object.values(DATA);
-      runtime.setFairyTale(fairyTalesData[fairyTale!.id + 1]);
-      navigate('/story');
-    }
   };
 
   useEffect(() => {
@@ -63,7 +48,6 @@ const FairyTaleTest = () => {
           audio={data?.audio}
           page={page}
           onClickHome={onClickHome}
-          onClickForward={onClickForward}
           onClickTest={onClickTest}
           result={result === data?.success}
         />
