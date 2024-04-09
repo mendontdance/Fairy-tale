@@ -49,10 +49,10 @@ const MiniTest: FC<IMiniTest> = ({ data, result, counter, setCounter, page, setR
   return (
     <div className={classBem()}>
       <div className={classBem('title')}>{result ? result : data?.test?.text}</div>
-      <div className={classBem('amount')}>{counterText}</div>
       {result === data?.success && <div className={classBem('title')}>Можете приступить к следующему уроку</div>}
       {!result && (
         <>
+          <div className={classBem('amount')}>{counterText}</div>
           <div className={classBem('counter')}>{lives}</div>
           <fieldset className={classBem('choice')}>
             {data?.test?.variants.map((dataItem) => {

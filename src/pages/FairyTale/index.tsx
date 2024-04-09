@@ -37,7 +37,7 @@ const FairyTale = () => {
 
   const onClickHome = () => {
     runtime.setAudioPlay(false);
-    navigate('/');
+    navigate('/contents');
   };
 
   const onClickTest = () => {
@@ -164,7 +164,7 @@ const FairyTale = () => {
     <div className={classBem()}>
       <div className={classBem('text-container')}>
         {data?.title && <div className={classBem('title')}>{data?.title}</div>}
-        {data?.audio && <audio ref={ref} src={data?.audio} preload="auto" onEnded={onEnded} />}
+        {data?.audio && <audio ref={ref} src={data?.audio} preload="auto" onEnded={() => setTimeout(onEnded, 2000)} />}
         <div className={classBem('text', { current: true })} ref={elementRef}>
           {data?.text}
         </div>

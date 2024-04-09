@@ -16,7 +16,7 @@ const FairyTaleTest = () => {
   const [data, setData] = useState<IFairyTaleData | undefined>(undefined);
   const [counter, setCounter] = useState(3);
   const onClickHome = () => {
-    navigate('/');
+    navigate('/contents');
   };
 
   const onClickTest = () => {
