@@ -22,7 +22,7 @@ const MiniTest: FC<IMiniTest> = ({ data, result, counter, setCounter, page, setR
       setCounter(--counter);
       setFirstAnswer(false);
     }
-    console.log(page + 1, runtime.fairyTale?.test.length);
+
     if (page + 1 === runtime.fairyTale?.test.length) {
       if (counter && answer === data?.rightAnswer) {
         setResult(data?.success);

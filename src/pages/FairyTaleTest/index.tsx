@@ -29,6 +29,12 @@ const FairyTaleTest = () => {
     }
   }, [page, runtime?.fairyTale?.data]);
 
+  useEffect(() => {
+    if (result === 'МОЛОДЕЦ! Ты выучил' && runtime.fairyTale?.id !== undefined) {
+      localStorage.setItem('order', String(runtime.fairyTale?.id + 1));
+    }
+  }, [result, runtime.fairyTale?.id]);
+
   return (
     <div className={classBem()}>
       <div className={classBem('text-container')}>

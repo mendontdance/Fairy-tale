@@ -20,9 +20,11 @@ const FairyTale = () => {
   const [prevData, setPrevData] = useState<IFairyTaleData | undefined>(undefined);
   const [smallPause, setSmallPause] = useState(false);
 
-  if (!runtime.fairyTale) {
-    navigate('/');
-  }
+  useEffect(() => {
+    if (!runtime.fairyTale) {
+      navigate('/');
+    }
+  }, [runtime.fairyTale]);
 
   const onEnded = () => {
     setSmallPause(false);

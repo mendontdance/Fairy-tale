@@ -3,6 +3,7 @@ export interface IFairyTale {
   name: string;
   data: IFairyTaleData[];
   test: IFairyTaleData[];
+  order: string;
 }
 
 export interface IFairyTaleData {
