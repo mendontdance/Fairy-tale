@@ -20,23 +20,20 @@ const Contents = () => {
           {fairyTalesData.map((fairyTale) => {
             return (
               <li key={fairyTale.id} className={classBem('list-item', { disabled: passedLesson < fairyTale.id })}>
-                <div className={classBem('text-wrapper')}>
+                <button
+                  onClick={() => {
+                    navigate('/story');
+                    runtime.setFairyTale(fairyTale);
+                  }}
+                  className={classBem('text-wrapper', { disabled: passedLesson < fairyTale.id })}
+                  disabled={passedLesson < fairyTale.id}
+                >
                   <div className={classBem('text')}>{fairyTale.order}</div>
                   <div className={classBem('text')}>{fairyTale.name}</div>
-                </div>
+                </button>
                 <div className={classBem('buttons')}>
                   <button
-                    className={classBem('button', { story: true })}
-                    type="button"
-                    key={fairyTale.id}
-                    onClick={() => {
-                      navigate('/story');
-                      runtime.setFairyTale(fairyTale);
-                    }}
-                    disabled={passedLesson < fairyTale.id}
-                  />
-                  <button
-                    className={classBem('button', { test: true })}
+                    className={classBem('button', { test: true, disabled: passedLesson < fairyTale.id })}
                     type="button"
                     key={fairyTale.id}
                     onClick={() => {

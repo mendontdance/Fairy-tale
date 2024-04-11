@@ -37,6 +37,13 @@
     &-wrapper {
       display: flex;
       gap: 5px;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+
+      &_disabled {
+        cursor: not-allowed;
+      }
     }
   }
 
@@ -74,6 +81,14 @@
 
     &_story {
       background-image: url("https://cdn-icons-png.flaticon.com/128/1828/1828866.png");
+    }
+
+    &_disabled {
+      cursor: not-allowed;
+      
+      &:hover {
+        background-color: #ebf2fa;
+      }
     }
   }
 

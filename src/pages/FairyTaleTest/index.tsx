@@ -20,7 +20,7 @@ const FairyTaleTest = () => {
   };
 
   const onClickTest = () => {
-    navigate('/story');
+    navigate('/contents');
   };
 
   useEffect(() => {
