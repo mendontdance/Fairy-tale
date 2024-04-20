@@ -165,6 +165,7 @@ const FairyTale = () => {
   return (
     <div className={classBem()}>
       <div className={classBem('text-container')}>
+        {data?.image && <img src={data?.image} alt={data?.text} className={classBem('img')} />}
         {data?.title && <div className={classBem('title')}>{data?.title}</div>}
         {data?.audio && <audio ref={ref} src={data?.audio} preload="auto" onEnded={() => setTimeout(onEnded, 2000)} />}
         <div className={classBem('text', { current: true })} ref={elementRef}>
@@ -175,7 +176,6 @@ const FairyTale = () => {
         </div>
       </div>
       <div className={classBem('panel')}>
-        {data?.image && <img src={data?.image} alt={data?.text} className={classBem('img')} />}
         <BottomPanel
           audio={data?.audio}
           page={page}
