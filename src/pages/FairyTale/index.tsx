@@ -6,6 +6,7 @@ import { useStore } from '../../store/RootStoreContext';
 import BottomPanel from '../../components/BottomPanel';
 import { IFairyTaleData } from '../../configs/types';
 import { animate, linear } from '../../utils';
+import { Tooltip } from '../../components';
 import './styles.scss';
 
 const FairyTale = () => {
@@ -63,7 +64,10 @@ const FairyTale = () => {
       return --prevState;
     });
     runtime.setAudioPlay(false);
+    animateBack();
+  };
 
+  const animateBack = () => {
     animate(
       linear,
       (progress) => {
@@ -97,18 +101,7 @@ const FairyTale = () => {
       });
       runtime.setAudioPlay(false);
     }
-
-    animate(
-      linear,
-      (progress) => {
-        if (elementRef1.current && elementRef.current) {
-          elementRef.current.style.opacity = '0';
-          elementRef1.current.style.transform = `translateY(${-57 + progress * 57 + 'px'})`;
-        }
-      },
-      700,
-      animateCurrentText
-    );
+    animateForward();
   };
 
   useEffect(() => {
@@ -146,30 +139,61 @@ const FairyTale = () => {
     );
   };
 
+  const animateForward = () => {
+    animate(
+      linear,
+      (progress) => {
+        if (elementRef1.current && elementRef.current) {
+          elementRef.current.style.opacity = '0';
+          elementRef1.current.style.transform = `translateY(${-57 + progress * 57 + 'px'})`;
+        }
+      },
+      700,
+      animateCurrentText
+    );
+  };
+
   useEffect(() => {
     if (runtime.audioPlay) {
-      animate(
-        linear,
-        (progress) => {
-          if (elementRef1.current && elementRef.current) {
-            elementRef.current.style.opacity = '0';
-            elementRef1.current.style.transform = `translateY(${-57 + progress * 57 + 'px'})`;
-          }
-        },
-        700,
-        animateCurrentText
-      );
+      animateForward();
     }
   }, [page, runtime?.fairyTale?.data]);
 
+  const [tooltipText, setTooltipText] = useState<string | undefined>('');
+
+  const asdf = data?.text.split(' ').map((elem, index) => (
+    <Tooltip
+      tooltipText={tooltipText}
+      key={data?.textTooltip && data?.textTooltip[index] + index}
+      showTooltip={tooltipText && data.textTooltip?.indexOf(tooltipText) === index}
+      text={
+        <span
+          onClick={() => {
+            if (!tooltipText || data.textTooltip?.indexOf(tooltipText) !== index) {
+              setTooltipText(data?.textTooltip && data?.textTooltip[index]);
+            } else {
+              setTooltipText('');
+            }
+          }}
+        >{`${elem} `}</span>
+      }
+      setTooltipText={setTooltipText}
+    />
+  ));
+  const qwer = () => {
+    if (tooltipText) {
+      setTooltipText('');
+    }
+  };
+
   return (
-    <div className={classBem()}>
+    <div className={classBem()} onClick={qwer}>
       <div className={classBem('text-container')}>
         {data?.image && <img src={data?.image} alt={data?.text} className={classBem('img')} />}
         {data?.title && <div className={classBem('title')}>{data?.title}</div>}
         {data?.audio && <audio ref={ref} src={data?.audio} preload="auto" onEnded={() => setTimeout(onEnded, 2000)} />}
         <div className={classBem('text', { current: true })} ref={elementRef}>
-          {data?.text}
+          {asdf}
         </div>
         <div className={classBem('text', { previous: true })} ref={elementRef1}>
           {prevData?.text}

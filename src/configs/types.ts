@@ -15,6 +15,7 @@ export interface IFairyTaleData {
   rightAnswer?: string;
   success?: string;
   error?: string;
+  textTooltip?: string[];
 }
 
 export interface IFairyTaleTest {

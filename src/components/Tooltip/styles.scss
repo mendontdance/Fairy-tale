@@ -1,0 +1,31 @@
+.tooltip {
+  position: relative;
+  display: inline;
+  user-select: none;
+
+  &__modal {
+    position: absolute;
+    font-size: 14px;
+    min-width: 60px;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -5px);
+    background-color: #000;
+    color: #ebf2fa;
+    padding: 5px 10px;
+    border-radius: 8px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 88%;
+      left: 50%;
+      transform: translate(-50%, 0px);
+      width: 15px;
+      height: 15px;
+      background-image: url('../../configs/data_images/down-arrow-svgrepo-com.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

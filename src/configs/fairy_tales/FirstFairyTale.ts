@@ -9,26 +9,31 @@ export const FirstFairyTale = [
     text: 'Roma in Italia est.',
     image: secondImage,
     audio: 'https://files.soundoftext.com/a50f6330-ebae-11ee-a44a-8501b7b1aefa.mp3',
+    textTooltip: ['Рим', 'в', 'Италия', 'находится'],
   },
   {
     text: 'Italia in Europa est. Graecia in Europa est.',
     image: thirdImage,
     audio: 'https://files.soundoftext.com/b1a65950-ebae-11ee-a44a-8501b7b1aefa.mp3',
+    textTooltip: ['Италия', 'в', 'Европа', 'находится', 'Греция', 'в', 'asdf', 'АВАНГАРД'],
   },
   {
     text: 'Italia et Graecia in Europa sunt.',
     image: fourthImage,
     audio: 'https://files.soundoftext.com/bbdeed10-ebae-11ee-a44a-8501b7b1aefa.mp3',
+    textTooltip: ['Италия', 'в', 'Европа', 'Тролль', 'Греция', 'в', 'Европа', 'находится'],
   },
   {
     text: 'Hispania quoque in Europa est.',
     image: fifthImage,
     audio: 'https://files.soundoftext.com/d0d01a00-ebae-11ee-a44a-8501b7b1aefa.mp3',
+    textTooltip: ['Италия', 'в', 'Европа', 'находится', 'Греция', 'в', 'Европа', 'находится'],
   },
   {
     text: 'Hispania et Italia et Graecia in Europa sunt.',
     image: firstImage,
     audio: 'https://files.soundoftext.com/7fa6fb90-c605-11ee-a44a-8501b7b1aefa.mp3',
+    textTooltip: ['Италия', 'в', 'Европа', 'находится', 'Греция', 'в', 'Европа', 'находится'],
   },
 ];
 
